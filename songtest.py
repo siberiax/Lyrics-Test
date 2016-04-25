@@ -1,23 +1,8 @@
 import urllib2
 
-print ("\nCHECK SONGS by Alex McHugh\n")
-
-artist = raw_input("Artist to check: ")
-
-print("")
-
-songs = []
-
-while(1):
-	song = raw_input("Enter song to check: ")
-	if (not song):
-		break
-	songs.append(song)
-
 words = ["damn", "bitch", "shit", "fuck", " ass "]
 
-print("")
-for song in songs:
+def checkSong(artist, song):
 	try:
 		a = artist.replace(" ", "-")
 		s = song.replace(" ", "-")
@@ -32,12 +17,10 @@ for song in songs:
 		bad = False
 		for word in words:
 			if (word in finalData[0]):
-				print(song + " is not clean")
 				bad = True
-				break
+				return 0
 		if (not bad):
-			print(song + " is clean!")
+			return 1
 	except:
-		print ("\nThere was an error when checking " + song + "\n")
-		continue
-print("")
+		return 2
+
