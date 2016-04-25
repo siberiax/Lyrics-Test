@@ -1,5 +1,4 @@
 from Tkinter import *
-from PIL import ImageTk, Image
 import songtest
 import sys
 
@@ -131,10 +130,10 @@ frame4.grid(row=4, columnspan=2)
 title = Label(frame3, text="Are these songs clean?", font=("Calibri", 20)).grid(row=0)
 sig = Label(frame3, text="by Alex McHugh", font=("Calibri", 12)).grid(row=1)
 
-img1 = ImageTk.PhotoImage(Image.open("headphone.png"))
-img2 = ImageTk.PhotoImage(Image.open("guitar.png"))
-img3 = ImageTk.PhotoImage(Image.open("microphone.png"))
-img4 = ImageTk.PhotoImage(Image.open("musicnote.png"))
+img1 = PhotoImage(file="headphone.gif")
+img2 = PhotoImage(file="guitar.gif")
+img3 = PhotoImage(file="microphone.gif")
+img4 = PhotoImage(file="musicnote.gif")
 image1 = Label(frame1, image=img1).grid(row=2, column=0)
 image2 = Label(frame1, image=img2).grid(row=2, column=1)
 image3 = Label(frame1, image=img3).grid(row=3, column=0)
@@ -150,4 +149,3 @@ makeArtist()
 
 window.wm_title("Lyrics Test")
 window.mainloop()
-
