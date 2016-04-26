@@ -148,4 +148,6 @@ history = Label(frame3, text="History", font=("Calibri",20)).grid(row=3, columns
 makeArtist()
 
 window.wm_title("Lyrics Test")
+window.geometry("+%d+%d" % (465, 134))
+
 window.mainloop()
