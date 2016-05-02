@@ -150,4 +150,6 @@ makeArtist()
 window.wm_title("Lyrics Test")
 window.geometry("+%d+%d" % (465, 134))
 
+window.resizable(width=FALSE, height=FALSE)
+
 window.mainloop()
