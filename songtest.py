@@ -9,18 +9,17 @@ def checkSong(artist, song):
 		s1 = s.replace("'", "")
 		url="http://genius.com/" + a + "-" + s1 + "-lyrics"
 
-		req = urllib2.Request(url, headers={'User-Agent' : "Magic Browser"}) 
+		req = urllib2.Request(url, headers={'User-Agent' : "Magic Browser"})
 		page = urllib2.urlopen(req)
 		data = page.read()
 		newData = data.split("<h2 class=\"text_label text_label--gray u-top_margin\">")
 		finalData = newData[1].split("</lyrics>")
 		bad = False
 		for word in words:
-			if (word in finalData[0]):
+			if (word in finalData[0].lower()):
 				bad = True
 				return 0
 		if (not bad):
 			return 1
 	except:
 		return 2
-
